@@ -184,3 +184,19 @@ function missingNumbers(arr) {
 }
 console.log( "9nth Question answer:", missingNumbers(missArr));
 
+// Question 10
+// make a string palindrome
+const palindrome = str => {
+  str.toLowerCase()
+  console.log(str === str.split('').reverse().join(''));
+};
+// palindrome("karak");
+
+// Question 11
+// Evaluate Fibonacci series
+function fibonacci(num){
+  return num < 1 ? 0
+          :num <= 2 ? 1
+          :fibonacci(num-1)+fibonacci(num-2)
+}
+// console.log(fibonacci(4));

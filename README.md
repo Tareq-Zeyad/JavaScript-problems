@@ -1,1 +1,1 @@
-## common interview problems solved by JavaScript.
+## Practicing JavaScript interview problems.
