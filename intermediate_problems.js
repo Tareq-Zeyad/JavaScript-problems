@@ -11,7 +11,7 @@ function sumAll(arr) {
     let max = Math.max(arr[0],arr[1]);
     let min = Math.min(arr[0],arr[1]);
 
-    for (let i = min; i <= max; i++) {
+    for (let i = min; i <= max; i++) { 
         sum += i;
       }
       console.log(sum);
@@ -54,3 +54,26 @@ function destroyer(arr) {
   }
   
   console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3));
+
+function binaryRep(num){
+  return (num >>> 0).toString(2);
+}
+console.log(binaryRep(7));
+
+// Problem 4
+/*
+Return true if the given string is a palindrome. Otherwise, return false.
+
+A palindrome is a word or sentence that's spelled the same way both forward and backward, ignoring punctuation, case, and spacing
+*/
+function palindrome(str) {
+  str = str.toLowerCase();
+  str = str.replace(/[^a-z0-9]/g, '');
+  if(str.split('').reverse().join('') === str){
+    return true;
+  }else{
+    return false;
+  }
+};
+
+console.log(palindrome("eye"));
