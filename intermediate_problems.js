@@ -51,13 +51,13 @@ function destroyer(arr) {
     }
       return arr.filter(item => item !== null);
   
-  }
+  };
   
   console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3));
 
 function binaryRep(num){
   return (num >>> 0).toString(2);
-}
+};
 console.log(binaryRep(7));
 
 // Problem 4
@@ -77,3 +77,51 @@ function palindrome(str) {
 };
 
 console.log(palindrome("eye"));
+
+// Problem 5
+/*
+Convert the given number into a roman numeral.
+
+All roman numerals answers should be provided in upper-case.
+*/
+
+function convertToRoman(num) {
+  let romanVals = [
+    ['M', 1000],
+    ['CM', 900],
+    ['D', 500],
+    ['CD', 400],
+    ['C', 100],
+    ['XC', 90],
+    ['L', 50],
+    ['XL', 40],
+    ['X', 10],
+    ['IX', 9],
+    ['V', 5],
+    ['IV', 4],
+    ['I', 1]
+  ];
+  let romanStr = '';
+  
+  for(let i = 0; i < romanVals.length; i++) {
+  	if(num >= romanVals[i][1]) {
+    		romanStr += romanVals[i][0];
+      		num -= romanVals[i][1];
+      		if(num >= romanVals[i][1]) {
+      			romanStr += romanVals[i][0];
+      			num -= romanVals[i][1];
+        		if(num >= romanVals[i][1]) {
+        			romanStr += romanVals[i][0];
+      				num -= romanVals[i][1];
+        }
+      }
+    }
+  }
+  console.log(romanStr);
+  return romanStr;
+}
+
+convertToRoman(29);
+
+
+
